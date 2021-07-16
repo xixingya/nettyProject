@@ -1,0 +1,33 @@
+syntax = "proto3";
+option optimize_for = SPEED;
+//option java_package="tech.xixing.netty.code2";
+
+message MyMessage{
+
+  enum DataType{
+    StudentType = 0; //要求枚举从0开始
+    WorkerType = 1;
+  }
+
+  //data_type 来标识传的是哪一个枚举类型，表示MyMessage这个的第一个属性是DataType
+  DataType dataType =1;
+
+  oneof dataBody{
+    Student student =2;
+    Worker worker =3;
+  }
+
+}
+
+
+
+
+message Student{
+  int32 id =1;
+  string name =2;
+}
+
+message Worker{
+  string name =1;
+  int32 age=2;
+}

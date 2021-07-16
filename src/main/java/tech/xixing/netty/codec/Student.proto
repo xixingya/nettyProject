@@ -1,0 +1,9 @@
+syntax = "proto3"; //版本
+
+option java_outer_classname = "StudentPOJO";//生成的外部类，文件名
+
+//message管理
+message Student{//这是发送的msg，会在外部类生成这个内部类
+  int32 id = 1;  //字段为int32名字为id，1表示熟悉序号，不是值
+  string name =2;
+}
